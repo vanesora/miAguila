@@ -1,0 +1,23 @@
+<div class="menu">
+    <div class= "menuHeader">
+        <img src="./../../../assets/img/logo-name.jpg">
+        <div class= "menuHeaderUser">
+            <img src="./../../../assets/img/profile-icon.png">
+            <h1>Jorge Solano</h1>
+            <h3>Beneficiario</h3>
+        </div>
+    </div>
+    <div class="menuList" *ngFor = "let item of menuItems">
+        <div class="menuListItem">
+            <div class="iconItem">
+                <span class="material-icons">
+                    {{item.icon}}
+                </span>
+            </div>
+            <div class="nameItem">
+                {{item.name}}
+            </div>
+        </div>
+    </div>
+</div>
+
