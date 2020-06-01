@@ -1,29 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatButtonModule } from '@angular/material/button';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatIconModule } from '@angular/material/icon';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardModule } from './pages/dashboard/dashboard.module';
-import { MenuComponent } from './components/menu/menu.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { RequestTripComponent } from './pages/dashboard/request-trip/request-trip.component';
+import { OriginComponent } from './pages/dashboard/request-trip/origin/origin.component';
+import { DestinationComponent } from './pages/dashboard/request-trip/destination/destination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
+    DashboardComponent,
+    RequestTripComponent,
+    OriginComponent,
+    DestinationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    DashboardModule,
-    MatSidenavModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatIconModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
