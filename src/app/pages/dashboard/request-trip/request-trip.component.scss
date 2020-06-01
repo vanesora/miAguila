@@ -1,0 +1,114 @@
+.requestTrip{
+    height: 100%;
+}
+.headerRequestTrip{
+    height: 30%;
+    .userRequestTrip{
+        position: relative;
+        height: 100%;
+
+        .backgroundBlue{
+            background-color: rgb(6, 6, 126);
+            width: 100%;
+            height: 40%;
+        }
+
+        .itemUsers{
+            top: 10%;
+            left: 5%;
+            position: absolute;
+            background-color: white;
+            height: 60%;
+            width: 90%;
+            z-index: 5;
+            border-radius: 5px;
+            box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.75);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 40px;
+
+            .listUserRequestTrip{
+                text-align: center;
+
+                .iconUserRequestTrip{
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;                    border: 1px solid rgb(112, 112, 112);
+                    background-color: rgba(255, 255, 255, 0);
+                    color: rgb(112, 112, 112);;
+                }
+                .textIcon{
+                    font-size: 14px;
+                    padding-top: 5px;
+                    cursor: pointer;
+                }
+
+                &:hover{
+                    .iconUserRequestTrip{
+                        border: none;
+                        background-color: rgba(129, 252, 193, 0.836);
+                        box-shadow: 0px 0px 21px -6px rgb(2, 240, 125);
+                        color: rgb(11, 150, 83);
+                    }
+                    .textIcon{
+                        color: rgb(11, 150, 83);
+                    }
+                }
+            }
+
+            .selectItem{
+                .iconUserRequestTrip{
+                    border: none;
+                    background-color: rgba(129, 252, 193, 0.836);
+                    box-shadow: 0px 0px 21px -6px rgb(2, 240, 125);
+                    color: rgb(10, 175, 96);
+                }
+                .textIcon{
+                    color: rgb(10, 175, 96);
+                }
+            }
+        }
+
+        .tabsNav{
+            display: flex;
+            margin-top: 20%;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 30px;
+
+            .listTabsRequestTrip{
+                display: flex;
+
+                .idTabRequestTrip{
+                    font-size: 14px;
+                    height: 22px;
+                    width: 22px;
+                    padding: 0px;
+                    border-radius: 50%;
+                    background-color: rgba(255, 255, 255, 0);
+                    border: 1px solid rgb(112, 112, 112);
+                    
+                    &:hover{
+                        box-shadow: 0px 0px 21px -4px rgb(2, 240, 125);
+                        border: 1px solid rgb(10, 175, 96);
+                        color: rgb(10, 175, 96);
+                    }
+                }
+                .textTab{
+                    padding-left: 5px;
+                    font-size: 1;
+                    width: 150px;
+                }
+            }
+
+            .selectItem{
+                .idTabRequestTrip{
+                    box-shadow: 0px 0px 21px -4px rgb(2, 240, 125);
+                    border: 1px solid rgb(10, 175, 96);
+                    color: rgb(10, 175, 96);
+                }
+            }
+        }
+    }
+}

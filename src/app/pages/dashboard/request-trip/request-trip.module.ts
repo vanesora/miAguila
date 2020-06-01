@@ -4,6 +4,7 @@ import { RequestTripComponent } from './request-trip.component';
 import { RequestTripRoutingModule } from './request-trip-routing.module';
 import { OriginComponent } from './origin/origin.component';
 import { DestinationComponent } from './destination/destination.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { DestinationComponent } from './destination/destination.component';
   imports: [
     CommonModule,
     RequestTripRoutingModule,
+    MatIconModule
   ]
 })
 export class RequestTripModule { }
