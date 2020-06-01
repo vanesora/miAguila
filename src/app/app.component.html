@@ -1,11 +1,19 @@
 <mat-sidenav-container class="sidenavAppComponent">
   <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
-               (closed)="events.push('close!')">
+    (closed)="events.push('close!')">
+    <div class="icons">
+      <button class="menuButtonBack" mat-icon-button (click)="sidenav.toggle()" *ngIf="opened">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <img src="./../assets/img/logo-name.jpg">
+    </div>
     <app-menu></app-menu>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
+    <button class="menuButton" mat-icon-button (click)="sidenav.toggle()" *ngIf="!opened">
+      <mat-icon>dehaze</mat-icon>
+    </button>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

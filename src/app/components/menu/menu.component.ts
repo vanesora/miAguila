@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItems } from 'src/app/models/manuItems.model';
+import { ConfigurationService } from 'src/app/services/configuration.service';
 
 @Component({
   selector: 'app-menu',
@@ -21,12 +22,14 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private _router: Router,
+    public configService: ConfigurationService
   ) { }
 
   ngOnInit() {
   }
 
   public selectMenuItem(item: MenuItems): void {
+    this.configService.selectItem = true;
     this.menuItems = this.menuItems.map((itemMenu) => {
       itemMenu.select = false;
       return itemMenu;
