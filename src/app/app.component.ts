@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfigurationService } from './services/configuration.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,7 @@ export class AppComponent {
   events: string[] = [];
   opened = true;
 
-  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
+  constructor(
+    public configService: ConfigurationService
+  ) { }
 }
