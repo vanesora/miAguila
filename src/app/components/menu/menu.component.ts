@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MenuItems } from 'src/app/models/manuItems.model';
 
 @Component({
   selector: 'app-menu',
@@ -7,19 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  public menuItems = [
-    {name: 'Pedir Aguila', select: false, icon: 'check_circle_outline'},
-    {name: 'Vuelos', select: false, icon: 'room'},
-    {name: 'Rutas', select: false, icon: 'swap_calls'},
-    {name: 'Administrar', select: false, icon: 'app_settings_alt'},
-    {name: 'Estadísticas', select: false, icon: 'bar_chart'},
-    {name: 'Medios de Pago', select: false, icon: 'credit_card'},
-    {name: 'Cerrar sesión', select: false, icon: 'logout'}
+  public menuItems: MenuItems[] = [
+    { name: 'Pedir Aguila', select: false, icon: 'check_circle_outline', path: 'request-trip' },
+    { name: 'Vuelos', select: false, icon: 'room', path: '' },
+    { name: 'Rutas', select: false, icon: 'swap_calls', path: '' },
+    { name: 'Administrar', select: false, icon: 'app_settings_alt', path: '' },
+    { name: 'Estadísticas', select: false, icon: 'bar_chart', path: '' },
+    { name: 'Medios de Pago', select: false, icon: 'credit_card', path: '' },
+    { name: 'Cerrar sesión', select: false, icon: 'logout', path: '' }
   ];
 
-  constructor() { }
+  constructor(
+    private _router: Router,
+  ) { }
 
   ngOnInit() {
+  }
+
+  public selectMenuItem(item: MenuItems): void {
+    this.menuItems = this.menuItems.map((itemMenu) => {
+      itemMenu.select = false;
+      return itemMenu;
+    });
+    item.select = true;
+    this._router.navigate([`/dashboard/${item.path}`]);
   }
 
 }
