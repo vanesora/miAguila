@@ -1,5 +1,6 @@
 .requestTrip{
     height: 100%;
+    background-color: white;
 }
 .headerRequestTrip{
     height: 30%;
@@ -34,7 +35,8 @@
                 .iconUserRequestTrip{
                     border-radius: 50%;
                     height: 40px;
-                    width: 40px;                    border: 1px solid rgb(112, 112, 112);
+                    width: 40px;                    
+                    border: 1px solid rgb(112, 112, 112);
                     background-color: rgba(255, 255, 255, 0);
                     color: rgb(112, 112, 112);;
                 }
@@ -110,5 +112,19 @@
                 }
             }
         }
+    }
+}
+
+.next{
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    margin-top: 10px;
+    margin-right: 20px;
+
+    button{
+        height: 30px;
+        width: 30px;
+        border: none;
     }
 }

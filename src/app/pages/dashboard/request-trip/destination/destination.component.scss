@@ -1,0 +1,59 @@
+.destination{
+    height: 100%;
+    form{
+        width: 100%;
+    }
+
+    mat-select{
+        padding: 0px 20px;
+    }
+
+    .inputAddress{
+        margin-top: 20px;
+        background-color: rgba(129, 252, 193, 0.555);
+
+        mat-form-field{
+            margin: 0px 3px 0px 70px;
+            width: calc( 100% - 75px);
+        }
+    }
+
+    .favorites{
+        width: 100%;
+        overflow-y: auto;
+        height: 220px;
+
+        h1{
+            padding-top: 5px;
+            padding-left: 10%;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .listFavorites{
+            display: flex;
+            align-items: center;
+            margin: 10px 0px;
+            margin-left: 20px;
+            cursor: pointer;
+
+            .iconStar{
+                margin-right: 10px;
+                margin-left: 20px;
+                color: rgb(212, 191, 0);
+            }
+
+            .instructions{
+                .nickName{
+                    font-size: 14px;
+                    color: rgb(77, 77, 77);
+                    font-weight: bold;
+                }
+                .address{
+                    font-size: 11px;
+                    color: rgb(138, 138, 138);
+                }
+            }
+        }
+    }
+}
