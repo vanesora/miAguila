@@ -29,12 +29,19 @@ export class MenuComponent implements OnInit {
   }
 
   public selectMenuItem(item: MenuItems): void {
+    const double = this.menuItems.find(itemFind => item === itemFind);
+    if (double.select === true) {
+      this.configService.selectItem = false;
+      item.select = false;
+      this._router.navigate(['/dashboard']);
+      return;
+    }
     this.configService.selectItem = true;
     this.menuItems = this.menuItems.map((itemMenu) => {
       itemMenu.select = false;
       return itemMenu;
     });
-    item.select = true;
+    item.select = true;    
     this._router.navigate([`/dashboard/${item.path}`]);
   }
 
