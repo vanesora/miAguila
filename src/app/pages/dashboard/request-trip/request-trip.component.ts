@@ -15,12 +15,12 @@ export class RequestTripComponent implements OnInit {
   ];
 
   public tabsItems = [
-    { name: 'Origen', id: '1', select: true, path: 'origin' },
-    { name: 'Destino', id: '2', select: false, path: 'destination' },
-    { name: '...', id: '3', select: false, path: '' },
-    { name: '...', id: '4', select: false, path: '' },
-    { name: '...', id: '5', select: false, path: '' },
-    { name: '...', id: '6', select: false, path: '' }
+    { name: 'Origen', id: 1, select: true, path: 'origin' },
+    { name: 'Destino', id: 2, select: false, path: 'destination' },
+    { name: '...', id: 3, select: false, path: '' },
+    { name: '...', id: 4, select: false, path: '' },
+    { name: '...', id: 5, select: false, path: '' },
+    { name: '...', id: 6, select: false, path: '' }
   ];
 
   constructor(
@@ -30,12 +30,27 @@ export class RequestTripComponent implements OnInit {
   ngOnInit() {
   }
 
-  public selectMenuItem(item ): void {
+  public selectMenuItem(item): void {
     this.tabsItems = this.tabsItems.map((itemMenu) => {
       itemMenu.select = false;
       return itemMenu;
     });
     item.select = true;
+    this._router.navigate([`/dashboard/request-trip/${item.path}`]);
+  }
+
+  public nextItem(): void {
+    let item = this.tabsItems.find(data => data.select === true);
+    if (item) {
+      this.tabsItems = this.tabsItems.map((select) => {
+        select.select = false;
+        if (item.id + 1 === select.id) {
+          select.select = true;
+        }
+        return select;
+      });
+    }
+    item = this.tabsItems.find(data => data.select === true);
     this._router.navigate([`/dashboard/request-trip/${item.path}`]);
   }
 
