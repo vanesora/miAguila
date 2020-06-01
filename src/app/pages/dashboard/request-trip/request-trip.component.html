@@ -1,0 +1,35 @@
+<div class="requestTrip">
+    <div class="headerRequestTrip">
+        <div class="userRequestTrip">
+            <div class="backgroundBlue"></div>
+            <div class="itemUsers">
+                <div *ngFor="let item of usersItems" [ngClass]="{ 'listUserRequestTrip':true, 'selectItem': item.select }">
+                    <button class="iconUserRequestTrip" mat-icon-button>
+                        <mat-icon>{{item.icon}}</mat-icon>
+                    </button>
+                    <div class="textIcon">
+                        {{item.type}}
+                    </div>
+                </div>
+            </div>
+            <div class="tabsNav">
+                <div *ngFor="let item of tabsItems" [ngClass]="{ 'listTabsRequestTrip':true, 'selectItem': item.select }">
+                    <button mat-mini-fab class="idTabRequestTrip" (click)="selectMenuItem(item)">
+                        {{item.id}}
+                    </button>
+                    <div class="textTab" *ngIf="item.select">
+                        {{item.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navRequestTrip">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="next">
+        <button mat-icon-button (click)="nextItem()">
+            <mat-icon>arrow_forward</mat-icon>
+        </button>
+    </div>
+</div>

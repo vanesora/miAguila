@@ -1,0 +1,13 @@
+<div class="dashboard">
+    <div class="map">
+        <agm-map [latitude]="mapService.location.latitude" [longitude]="mapService.location.longitude" 
+        *ngIf="mapService.location">
+            <agm-marker [latitude]="mapService.location.latitude" [longitude]="mapService.location.longitude">
+            </agm-marker>
+            <agm-direction *ngIf="mapService.dir" [origin]="mapService.dir.origin" [destination]="mapService.dir.destination"></agm-direction>
+        </agm-map>
+    </div>
+    <div class="dashboardCard" *ngIf="configService.selectItem">
+        <router-outlet></router-outlet>
+    </div>
+</div>
