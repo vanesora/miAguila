@@ -5,6 +5,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
+import { MapsService } from 'src/app/services/maps.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,9 @@ import { AgmDirectionModule } from 'agm-direction';
       apiKey: 'AIzaSyANqw1N9ckH_4f5BBpVwSn-u-YEXSZWQO4'
     }),
     AgmDirectionModule
+  ],
+  providers: [
+    MapsService
   ]
 })
 export class DashboardModule { }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +9,11 @@ export class MapsService {
   public location = {};
   public dir = undefined;
 
-  constructor() { }
+  constructor(
+    public http: HttpClient
+  ) { }
 
-  public getLocation() {
+  public getLocation(): void {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         this.location = position.coords;
@@ -20,11 +22,15 @@ export class MapsService {
     }
   }
 
-  public getDirection() {
-    this.dir = {
-      origin: { lat: 4.7040948, lng: -74.20514229 },
-      destination: { lat: 4.5921339, lng: -74.1260522 }
-    };
+  public getDirection(): Promise<any> {
+    const header = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    return this.http
+    .get('https://demo9678198.mockable.io/mi-aguila/points', { headers: header})
+    .toPromise().then((data) => {
+      this.dir = data;
+    });
   }
 }
 
