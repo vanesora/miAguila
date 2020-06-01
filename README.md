@@ -7,7 +7,7 @@ Branches: Master, develop, features.
 Create by: Vanessa Sora
 
 ## First steps
-Clone git repository in branch develop.
+Clone development branch git repository.
 Run `npm i` to install project dependencies.
 
 ## Development server
