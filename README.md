@@ -9,6 +9,7 @@ Create by: Vanessa Sora
 ## First steps
 Clone development branch git repository.
 Run `npm i` to install project dependencies.
+in dashboar.module.ts write the apikey from google
 
 ## Development server
 

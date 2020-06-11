@@ -16,7 +16,7 @@ import { MapsService } from 'src/app/services/maps.service';
     DashboardRoutingModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyANqw1N9ckH_4f5BBpVwSn-u-YEXSZWQO4'
+      apiKey: ''
     }),
     AgmDirectionModule
   ],
